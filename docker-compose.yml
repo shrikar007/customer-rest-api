@@ -1,4 +1,4 @@
-version: "2.1"
+version: "3"
 services:
   microservices:
     build: .
@@ -16,7 +16,7 @@ services:
 
     environment:
       - 'MYSQL_ROOT_PASSWORD=root'
-      - 'MYSQL_DATABASE=crudexpenses'
+      - 'MYSQL_DATABASE=customer'
     ports:
       - '3306:3306'
     healthcheck:

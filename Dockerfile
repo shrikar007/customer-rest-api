@@ -1,6 +1,6 @@
 FROM  golang:1.12.4-alpine as  builder
 ENV GO111MODULE=on
-WORKDIR /go/src/github.com/shrikar007/rest-api-go
+WORKDIR /go/src/github.com/shrikar007/customer-rest-api
 RUN apk add --no-cache protobuf git make bash build-base \
 	&& rm -rf /var/cache/apk/*
 ADD . ./

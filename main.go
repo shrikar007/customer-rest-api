@@ -27,11 +27,11 @@ type Mysql struct {
 
 func main() {
 
-	dba, err := gorm.Open("mysql", "root:root@tcp(sqldb:3306)/")
+	dba, err := gorm.Open("mysql", "root:root@tcp(localhost:3306)/")
 	dba.Exec("CREATE DATABASE IF NOT EXISTS"+" customer")
 	dba.Close()
 
-	db, err := gorm.Open("mysql", "root:root@tcp(sqldb:3306)/customer?charset=utf8&parseTime=True")
+	db, err := gorm.Open("mysql", "root:root@tcp(localhost:3306)/customer?charset=utf8&parseTime=True")
 
 	if err != nil {
 		fmt.Println(err)
