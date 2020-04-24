@@ -81,7 +81,6 @@ func (db *Mysql) CustomerCtx(next http.Handler) http.Handler {
 }
 
 func (db *Mysql)  CreateCustomer(writer http.ResponseWriter, request *http.Request) {
-	//var expense structs.Expense
 
 	var req requests.CreateCustomerRequest
 	err := render.Bind(request, &req)
@@ -100,17 +99,13 @@ func (db *Mysql)  CreateCustomer(writer http.ResponseWriter, request *http.Reque
 		render.Render(writer, request, dberror.ErrRender(err))
 		return
 	}
-	//db.Db.Close()
-
 }
 
 func (db *Mysql) GetId(writer http.ResponseWriter, request *http.Request) {
 
 	custo:= request.Context().Value("customer").(structs.Customer)
 	fmt.Println(db.Db.Value)
-
 		render.Render(writer, request, response.Getoneresponse(&custo))
-
 }
 
 func (db *Mysql) GetAll(writer http.ResponseWriter, request *http.Request) {
